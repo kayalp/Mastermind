@@ -1,8 +1,33 @@
 html, body {
-    background-color: lightblue;
+    background-color: burlywood;
 }
 
 h1 {
-    color: blue;
+    color: maroon;
     text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+div {
+    height: 500px;
+}
+/*
+#trapezoid {
+    margin: auto;
+    border-bottom: 325px solid slategray;
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+    height: 40px;
+    width: 350px;
+}*/
+#trapezoid {
+    margin: auto; 
+    border-bottom: 325px solid slategray;
+    border-left: 24px solid transparent;
+    border-right: 24px solid transparent;
+    height: 40px;
+    width: 70px;
 }
