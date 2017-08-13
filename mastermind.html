@@ -7,7 +7,6 @@
 <h1> Mastermind </h1>
 <p> Choose any combination of four pegs from the six colors available. Duplicate colors are allowed, and the order in which you place them matters. </p>
 <p> Selections that do not utilize the hints of previous moves, while legal, will hinder your success in the game. </p>
-<p> In other words, don’t be an idiot. </p>
 
 <canvas id=trapezoid width=600 height=600 ></canvas>
 <script>
@@ -25,14 +24,14 @@ ctx.lineTo(590, 450);
 ctx.closePath();
 ctx.stroke();
 ctx.fill();
-
+/*
 // divide the columns
 ctx.moveTo(118, 450);
 ctx.lineTo(190, 0);
 ctx.moveTo(236, 450);
 ctx.lineTo(260, 0);
 ctx.moveTo(354, 450);
-ctx.lineTo(330, 0);
+ctx.lineTo(330, 0);*/
 ctx.moveTo(472, 450);
 ctx.lineTo(400, 0);
 ctx.stroke();
@@ -61,17 +60,50 @@ while (y > 0) {
 ctx.stroke();
 
 
-
-
 ctx.scale(2,1);
-ctx.beginPath();
-ctx.arc(31, 309, 8, 0, 2 * Math.PI);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.arc(78, 16, 5.5, 0, 2 * Math.PI);
-ctx.stroke();
-
+var x = 31.9;
+var y = 427.5;
+var radius = 10;
+while (y > 0) {
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, 2 * Math.PI); 
+    ctx.stroke();
+    x = x + 6 - 1.2;
+    y = y - 45;
+    radius = radius * .96;
+}
+x = 89.7;
+y = 427.5;
+radius = 10;
+while (y > 0) {
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, 2 * Math.PI); 
+    ctx.stroke();
+    x = x + 3.6 - 1.2;
+    y = y - 45;
+    radius = radius * .96;
+}
+x = 147.5;
+y = 427.5;
+radius = 10;
+while (y > 0) {
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, 2 * Math.PI); 
+    ctx.stroke();
+    y = y - 45;
+    radius = radius * .96;
+}
+x = 205.3;
+y = 427.5;
+radius = 10;
+while (y > 0) {
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, 2 * Math.PI); 
+    ctx.stroke();
+    x = x - 1.2 - 1.2;
+    y = y - 45;
+    radius = radius * .96;
+}
 </script>
 
 
