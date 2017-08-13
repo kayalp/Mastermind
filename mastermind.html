@@ -9,7 +9,71 @@
 <p> Selections that do not utilize the hints of previous moves, while legal, will hinder your success in the game. </p>
 <p> In other words, don’t be an idiot. </p>
 
-<div id=trapezoid></div>
+<canvas id=trapezoid width=600 height=600 ></canvas>
+<script>
+var canv=document.getElementById(`trapezoid`);
+var ctx=canv.getContext(`2d`);
+
+ctx.fillStyle = `rgba(112, 128, 144, 0.5)`;
+
+// draw the outline and fill that
+ctx.beginPath();
+ctx.moveTo(0, 450);
+ctx.lineTo(120, 0);
+ctx.lineTo(470, 0);
+ctx.lineTo(590, 450);
+ctx.closePath();
+ctx.stroke();
+ctx.fill();
+
+// divide the columns
+ctx.moveTo(118, 450);
+ctx.lineTo(190, 0);
+ctx.moveTo(236, 450);
+ctx.lineTo(260, 0);
+ctx.moveTo(354, 450);
+ctx.lineTo(330, 0);
+ctx.moveTo(472, 450);
+ctx.lineTo(400, 0);
+ctx.stroke();
+
+// draw the bottom part to make it more 3-D, and fill it
+ctx.moveTo(120, 0);
+ctx.lineTo(470, 0);
+ctx.moveTo(0, 450);
+ctx.lineTo(590, 450);
+ctx.lineTo(590, 490);
+ctx.lineTo(0, 490);
+ctx.lineTo(0, 450);
+ctx.stroke();
+ctx.fill();
+
+var xstart = 12;
+var xend = 578;
+var y = 405;
+while (y > 0) {
+    ctx.moveTo(xstart, y);
+    ctx.lineTo(xend, y);
+    y = y - 45;
+    xstart = xstart + 12;
+    xend = xend - 12;
+}
+ctx.stroke();
+
+
+
+
+ctx.scale(2,1);
+ctx.beginPath();
+ctx.arc(31, 309, 8, 0, 2 * Math.PI);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(78, 16, 5.5, 0, 2 * Math.PI);
+ctx.stroke();
+
+</script>
+
 
 
 

@@ -14,20 +14,29 @@ p {
 div {
     height: 500px;
 }
+
+canvas {
+    margin-top: 40px;
+    margin-left: 200px;
+    margin-right: 400px;
+}
+
+#helplink {
+    text-align: left;
+}
+
+
+
+
+
+
+
+
 /*
 #trapezoid {
-    margin: auto;
-    border-bottom: 325px solid slategray;
-    border-left: 120px solid transparent;
-    border-right: 120px solid transparent;
-    height: 40px;
-    width: 350px;
-}*/
-#trapezoid {
-    margin: auto; 
     border-bottom: 325px solid slategray;
     border-left: 24px solid transparent;
     border-right: 24px solid transparent;
     height: 40px;
     width: 70px;
-}
+}*/
