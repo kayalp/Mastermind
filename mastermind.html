@@ -10,44 +10,46 @@
 <p> Selections that do not utilize the hints of previous moves, while legal, will hinder your success in the game. </p>
 
 
-<canvas id=trapezoid width=600 height=600 ></canvas>
+<canvas id=trapezoid width=700 height=535 ></canvas>
 
 <script>
+// this script section is for setting up the view of the page
+
 var canv=document.getElementById(`trapezoid`);
 var ctx=canv.getContext(`2d`);
 
 ctx.fillStyle = `rgba(112, 128, 144, 0.5)`;
 
 // draw the outline and fill that
+// now includes the bottom row for holding color pegs
 ctx.beginPath();
-ctx.moveTo(0, 450);
-ctx.lineTo(120, 0);
-ctx.lineTo(470, 0);
-ctx.lineTo(590, 450);
+ctx.moveTo(0, 495);
+ctx.lineTo(132, 0);
+ctx.lineTo(482, 0);
+ctx.lineTo(614, 495);
 ctx.closePath();
 ctx.stroke();
 ctx.fill();
 
 // divide right column
-ctx.moveTo(472, 450);
-ctx.lineTo(400, 0);
+ctx.moveTo(484, 450);
+ctx.lineTo(412, 0);
 ctx.stroke();
 
+
 // draw the bottom part to make it more 3-D, and fill it
-ctx.moveTo(120, 0);
-ctx.lineTo(470, 0);
-ctx.moveTo(0, 450);
-ctx.lineTo(590, 450);
-ctx.lineTo(590, 490);
-ctx.lineTo(0, 490);
-ctx.lineTo(0, 450);
+ctx.moveTo(0, 495);
+ctx.lineTo(614, 495);
+ctx.lineTo(614, 535);
+ctx.lineTo(0, 535);
+ctx.lineTo(0, 495);
 ctx.stroke();
 ctx.fill();
 
 // divide rows
 var xstart = 12;
-var xend = 578;
-var y = 405;
+var xend = 602;
+var y = 450;
 while (y > 0) {
     ctx.moveTo(xstart, y);
     ctx.lineTo(xend, y);
@@ -59,7 +61,7 @@ ctx.stroke();
 
 // fill in the holes
 ctx.scale(2,1);
-var x = 31.9;
+var x = 37.9;
 var y = 427.5;
 var radius = 10;
 while (y > 0) {
@@ -70,7 +72,7 @@ while (y > 0) {
     y = y - 45;
     radius = radius * .96;
 }
-x = 89.7;
+x = 95.7;
 y = 427.5;
 radius = 10;
 while (y > 0) {
@@ -81,7 +83,7 @@ while (y > 0) {
     y = y - 45;
     radius = radius * .96;
 }
-x = 147.5;
+x = 153.5;
 y = 427.5;
 radius = 10;
 while (y > 0) {
@@ -91,7 +93,7 @@ while (y > 0) {
     y = y - 45;
     radius = radius * .96;
 }
-x = 205.3;
+x = 211.3;
 y = 427.5;
 radius = 10;
 while (y > 0) {
@@ -104,8 +106,8 @@ while (y > 0) {
 }
 
 // fill in the right holes, the ones where you score
-var xleft = 254.47;
-var xright = 273.33;
+var xleft = 260.47;
+var xright = 279.33;
 y = 435;
 radius = 4;
 var xdiffLeft = 1.5;
@@ -139,9 +141,59 @@ while (y > 0) {
     radius *= .98;
 }
 
+// fill in the color peg holes
+x = 46;
+var xdiff = 43;
+y = 472.5;
+radius = 10.41667;
+while (x < (46 + 6 * xdiff)) {
+    switch (x) {
+        case 46:	
+	    ctx.fillStyle = `white`;
+	    break;
+	case 46 + xdiff:	
+	    ctx.fillStyle = `yellow`;
+	    break;
+	case 46 + 2 * xdiff:	
+	    ctx.fillStyle = `orange`;
+	    break;
+	case 46 + 3 * xdiff:	
+	    ctx.fillStyle = `red`;
+	    break;
+	case 46 + 4 * xdiff:	
+	    ctx.fillStyle = `blue`;
+	    break;
+	case 46 + 5 * xdiff:	
+	    ctx.fillStyle = `green`;
+	    break;
+    }
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, 2 * Math.PI);
+    ctx.stroke();
+    ctx.fill();
+    x += xdiff;
+    
+}
+
 </script>
 
+<script>
+// functions for dragging and dropping
 
+function drag(ev) {
+    ev.dataTransfer.setData(`text`, ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData(`text`);
+    ev.target.appendChild(document.getElementById(data));
+}
+
+</script>
+
+<div id=one draggable=true ondragstart=drag(event) ></div>
+<div id=two ondragover=event.preventDefault() ondrop=drop(event) ></div>
 
 
 </body>

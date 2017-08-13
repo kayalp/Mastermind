@@ -12,17 +12,26 @@ p {
 }
 
 div {
-    height: 500px;
+    margin: auto;
+    height: 100px;
+    width: 200px;
 }
 
 canvas {
     margin-top: 40px;
-    margin-left: 400px;
+    margin-left: 360px;
     margin-right: 400px;
 }
 
 #helplink {
     text-align: left;
+}
+
+#one {
+    border: 5px solid blue;
+}
+#two {
+    border: 5px solid red;
 }
 
 
