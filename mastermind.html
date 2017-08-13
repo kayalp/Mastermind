@@ -59,7 +59,7 @@ while (y > 0) {
 }
 ctx.stroke();
 
-
+// fill in the holes
 ctx.scale(2,1);
 var x = 31.9;
 var y = 427.5;
@@ -104,6 +104,43 @@ while (y > 0) {
     y = y - 45;
     radius = radius * .96;
 }
+
+// fill in the right holes, the ones where you score
+var xleft = 254.47;
+var xright = 273.33;
+y = 435;
+radius = 4;
+var xdiffLeft = 1.5;
+var xdiffRight = 1.7;
+var ydiff = 15;
+while (y > 0) {
+    ctx.beginPath();
+    ctx.arc(xleft, y, radius, 0, 2 * Math.PI);
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.arc(xright, y, radius, 0, 2 * Math.PI);
+    ctx.stroke();
+    
+    y -= ydiff;
+    xleft -= xdiffLeft;
+    xright -= xdiffRight;
+    radius *= .98;
+
+    ctx.beginPath();
+    ctx.arc(xleft, y, radius, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(xright, y, radius, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    y -= 2*ydiff;
+    xleft -= 2*xdiffLeft;
+    xright -= 2*xdiffRight;
+    radius *= .98;
+}
+
 </script>
 
 
