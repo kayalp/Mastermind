@@ -9,16 +9,8 @@
 #div4A, #div4B, #div4C, #div4D, #div3A, #div3B, #div3C, #div3D, 
 #div2A, #div2B, #div2C, #div2D, #div1A, #div1B, #div1C, #div1D {
     display: inline-block;  
-    width: 70px;
-    height: 70px;
-    border: 2px solid black;
-    background-color: slategray;
-}
-
-#div9A, #div9B, #div9C, #div9D {
-    display: inline-block;  
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
     border: 2px solid black;
     background-color: slategray;
 }
@@ -31,6 +23,10 @@
     padding: 15px;
     box-sizing: border-box;
     position: relative;
+}
+
+svg {
+    display: inline-block;
 }
 </style>
 </head>
@@ -85,12 +81,29 @@
 <div id=div1B></div>
 <div id=div1C></div>
 <div id=div1D></div>
-<div class="center">
-  <p>Content of this block element</p>
-</div>
-<div class="center">
-    Content of this block element
-</div>
+<br>
+
+<svg height=60 width=80>
+  <circle cx=40 cy=30 r=20 stroke=black stroke-width=2 fill=red />
+</svg> 
+<svg height=60 width=80>
+  <circle cx=40 cy=30 r=20 stroke=black stroke-width=2 fill=blue />
+</svg> 
+<svg height=60 width=80>
+  <circle cx=40 cy=30 r=20 stroke=black stroke-width=2 fill=green />
+</svg> 
+
+<br>
+
+<svg height=60 width=80>
+  <circle cx=40 cy=30 r=20 stroke=black stroke-width=2 fill=white />
+</svg> 
+<svg height=60 width=80>
+  <circle cx=40 cy=30 r=20 stroke=black stroke-width=2 fill=black />
+</svg> 
+<svg height=60 width=80>
+  <circle cx=40 cy=30 r=20 stroke=black stroke-width=2 fill=yellow />
+</svg> 
 
 </body>
 
