@@ -1,70 +1,96 @@
+<!DOCTYPE html>
 <html> 
 <head>
     <link rel=stylesheet type=text/css href=./mastermindstyle.css>
 <style>
-#div1, #div2, #div3, #div4 {
-    float: left;
+#div10A, #div10B, #div10C, #div10D, #div9A, #div9B, #div9C, #div9D, 
+#div8A, #div8B, #div8C, #div8D, #div7A, #div7B, #div7C, #div7D, 
+#div6A, #div6B, #div6C, #div6D, #div5A, #div5B, #div5C, #div5D, 
+#div4A, #div4B, #div4C, #div4D, #div3A, #div3B, #div3C, #div3D, 
+#div2A, #div2B, #div2C, #div2D, #div1A, #div1B, #div1C, #div1D {
+    display: inline-block;  
     width: 70px;
     height: 70px;
-    border: 5px solid black;
+    border: 2px solid black;
+    background-color: slategray;
+}
+
+#div9A, #div9B, #div9C, #div9D {
+    display: inline-block;  
+    width: 70px;
+    height: 70px;
+    border: 2px solid black;
+    background-color: slategray;
+}
+
+.center {
+    width: 300px;
+    height: 80px;
+    border: 4px solid teal;
+    margin: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    position: relative;
 }
 </style>
 </head>
 
 <body>
-<div id=`div1`></div>
-<div id=`div2`></div>
-<div id=`div3`></div>
-<div id=`div4`></div>
-
-<input type=text id=10><p id=1010></p><br>
-<input type=text id=9><p id=99></p><br>
-<input type=text id=8><p id=88></p><br>
-<input type=text id=7><p id=77></p><br>
-<input type=text id=6><p id=66></p><br>
-<input type=text id=5><p id=55></p><br>
-<input type=text id=4><p id=44></p><br>
-<input type=text id=3><p id=33></p><br>
-<input type=text id=2><p id=22></p><br>
-<input type=text id=1><p id=11></p><br>
-
-<button onclick=scoreRow()>Score move</button>
-<button onclick=func()>Click</button>
-<p id=`jkfd`></p>
-
-<script>
-var currentRow = `1`;
-function scoreRow() {
-    var codeAttempt = document.getElementById(currentRow).value;
-    if (codeAttempt.charAt(0) == `R`) {
-	document.getElementById(currentRow + currentRow).innerHTML = codeAttempt;
-    }
-    if (codeAttempt.charAt(0) == `G`) {
-	document.getElementById(currentRow + currentRow).innerHTML = codeAttempt;
-    }
-    if (codeAttempt.charAt(0) == `Y`) {
-	document.getElementById(currentRow + currentRow).innerHTML = codeAttempt;
-    }
-    if (codeAttempt.charAt(0) == `B`) {
-	document.getElementById(currentRow + currentRow).innerHTML = codeAttempt;
-    }
-    if (codeAttempt.charAt(0) == `W`) {
-	document.getElementById(currentRow + currentRow).innerHTML = codeAttempt;
-    }/*
-    if (codeAttempt.charAt(0) == codeAttempt.charAt(1)) {
-	alert(`Bruuhh you won! You the (wo)man.`);
-    }*/
-    if (currentRow == `10`) {
-	alert(`Sorry buddy, better luck next time. Or I should say, better brains next time. Idiot.`);
-    }
-    ++currentRow;
-}
-
-window.onload = function func() {
-    document.getElementById(`jkfd`).innerHTML = `ijknik`;
-}
-
-</script>
+<div id=div10A></div>
+<div id=div10B></div>
+<div id=div10C></div>
+<div id=div10D></div>
+<br>
+<div id=div9A></div>
+<div id=div9B></div>
+<div id=div9C></div>
+<div id=div9D></div>
+<br>
+<div id=div8A></div>
+<div id=div8B></div>
+<div id=div8C></div>
+<div id=div8D></div>
+<br>
+<div id=div7A></div>
+<div id=div7B></div>
+<div id=div7C></div>
+<div id=div7D></div>
+<br>
+<div id=div6A></div>
+<div id=div6B></div>
+<div id=div6C></div>
+<div id=div6D></div>
+<br>
+<div id=div5A></div>
+<div id=div5B></div>
+<div id=div5C></div>
+<div id=div5D></div>
+<br>
+<div id=div4A></div>
+<div id=div4B></div>
+<div id=div4C></div>
+<div id=div4D></div>
+<br>
+<div id=div3A></div>
+<div id=div3B></div>
+<div id=div3C></div>
+<div id=div3D></div>
+<br>
+<div id=div2A></div>
+<div id=div2B></div>
+<div id=div2C></div>
+<div id=div2D></div>
+<br>
+<div id=div1A></div>
+<div id=div1B></div>
+<div id=div1C></div>
+<div id=div1D></div>
+<div class="center">
+  <p>Content of this block element</p>
+</div>
+<div class="center">
+    Content of this block element
+</div>
 
 </body>
 
