@@ -1,0 +1,58 @@
+/* Function in C++ for scoring a move in Mastermind. Currently has four slots
+   and six colors. Will be converted to a new language and added to JS or
+   backend code once that gets sorted out. May have to be modified of format,
+   like for a particular game of Mastermind, storing the solution and only
+   taking each guess as a parameter since the solution stays the same for a
+   whole game. Could also make a class with the const member variables to
+   organize it a bit better */
+
+const int NUM_COLORS = 6;
+const int NUM_SLOTS = 4;
+
+int get_ind(char color) {
+    switch (color) {
+        case ('R'):
+            return 0;
+            break;
+        case ('Y'):
+            return 1;
+            break;
+        case ('G'):
+            return 2;
+            break;
+        case ('B'):
+            return 3;
+            break;
+	case (‘W’):
+	    return 4;
+	    break;
+	case (‘X’):
+	    return 5;
+	    break;
+        default:
+            return -1;
+    }
+}
+pair<int, int> check_guess(char soln[], char guess[]) {
+    int hits = 0, pseudohits = 0;
+    int num_each[NUM_COLORS]; // R->0, Y->1, G->2, B->3, W->4, black(X)->5
+    for (int i = 0; i < NUM_COLORS; ++i) {
+        num_each[i] = 0;
+    }
+    for (int i = 0; i < NUM_SLOTS; ++i) {
+        if (soln[i] == guess[i]) {
+            ++hits;
+        }
+        else {
+            ++num_each[get_ind(soln[i])];
+        }
+    }
+    for (int i = 0; i < NUM_SLOTS; ++i) {
+        int ind = get_ind(guess[i]);
+        if (ind != -1 && num_each[ind] > 0 && guess[i] != soln[i]) {
+            ++pseudohits;
+            --num_each[ind];
+        }
+    }
+    return pair<int, int>(hits, pseudohits);
+}
