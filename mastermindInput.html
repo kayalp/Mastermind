@@ -71,66 +71,77 @@
 </head>
 
 <body>
-<div id=div10A></div>
-<div id=div10B></div>
-<div id=div10C></div>
-<div id=div10D></div>
+<div id=div10A ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div10B ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div10C ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div10D ondragover=event.preventDefault() ondrop=drop(event)></div>
 <br>
-<div id=div9A></div>
-<div id=div9B></div>
-<div id=div9C></div>
-<div id=div9D></div>
+<div id=div9A ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div9B ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div9C ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div9D ondragover=event.preventDefault() ondrop=drop(event)></div>
 <br>
-<div id=div8A></div>
-<div id=div8B></div>
-<div id=div8C></div>
-<div id=div8D></div>
+<div id=div8A ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div8B ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div8C ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div8D ondragover=event.preventDefault() ondrop=drop(event)></div>
 <br>
-<div id=div7A></div>
-<div id=div7B></div>
-<div id=div7C></div>
-<div id=div7D></div>
+<div id=div7A ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div7B ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div7C ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div7D ondragover=event.preventDefault() ondrop=drop(event)></div>
 <br>
-<div id=div6A></div>
-<div id=div6B></div>
-<div id=div6C></div>
-<div id=div6D></div>
+<div id=div6A ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div6B ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div6C ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div6D ondragover=event.preventDefault() ondrop=drop(event)></div>
 <br>
-<div id=div5A></div>
-<div id=div5B></div>
-<div id=div5C></div>
-<div id=div5D></div>
+<div id=div5A ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div5B ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div5C ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div5D ondragover=event.preventDefault() ondrop=drop(event)></div>
 <br>
-<div id=div4A></div>
-<div id=div4B></div>
-<div id=div4C></div>
-<div id=div4D></div>
+<div id=div4A ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div4B ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div4C ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div4D ondragover=event.preventDefault() ondrop=drop(event)></div>
 <br>
-<div id=div3A></div>
-<div id=div3B></div>
-<div id=div3C></div>
-<div id=div3D></div>
+<div id=div3A ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div3B ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div3C ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div3D ondragover=event.preventDefault() ondrop=drop(event)></div>
 <br>
-<div id=div2A></div>
-<div id=div2B></div>
-<div id=div2C></div>
-<div id=div2D></div>
+<div id=div2A ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div2B ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div2C ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div2D ondragover=event.preventDefault() ondrop=drop(event)></div>
 <br>
-<div id=div1A></div>
-<div id=div1B></div>
-<div id=div1C></div>
-<div id=div1D></div>
-<br>
-
-<div id=redpiece></div> 
-<div id=bluepiece></div> 
-<div id=greenpiece></div> 
-
+<div id=div1A ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div1B ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div1C ondragover=event.preventDefault() ondrop=drop(event)></div>
+<div id=div1D ondragover=event.preventDefault() ondrop=drop(event)></div>
 <br>
 
-<div id=whitepiece></div> 
-<div id=blackpiece></div> 
-<div id=yellowpiece></div> 
+<div id=redpiece draggable=true ondragstart=drag(event)></div> 
+<div id=bluepiece draggable=true ondragstart=drag(event)></div> 
+<div id=greenpiece draggable=true ondragstart=drag(event)></div> 
+
+<br>
+
+<div id=whitepiece draggable=true ondragstart=drag(event)></div> 
+<div id=blackpiece draggable=true ondragstart=drag(event)></div> 
+<div id=yellowpiece draggable=true ondragstart=drag(event)></div> 
+
+<script>
+function drag(ev) {
+    ev.dataTransfer.setData(`text`, ev.target.id);
+}
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData(`text`);
+    ev.target.appendChild(document.getElementById(data).cloneNode(true));
+}
+</script>
 
 </body>
 
